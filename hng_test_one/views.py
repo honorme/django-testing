@@ -11,8 +11,8 @@ def get_info(request):
         utc_time = (datetime.utcnow() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')
 
         # GitHub URLs
-        github_file_url = 'https://github.com/username/repo/blob/main/file_name.ext'
-        github_repo_url = 'https://github.com/username/repo'
+        github_file_url = 'https://github.com/honorme/django-testing/blob/master/hng_test_one/views.py'
+        github_repo_url = 'https://github.com/honorme/django-testing'
 
         # Prepare response JSON
         response_data = {
