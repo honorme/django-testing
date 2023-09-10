@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from datetime import datetime, timedelta
 
+
 def get_info(request):
     try:
         slack_name = request.GET.get('slack_name')
@@ -8,7 +9,8 @@ def get_info(request):
 
         # Get current day and UTC time
         current_day = datetime.utcnow().strftime('%A')
-        utc_time = (datetime.utcnow() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')
+        # utc_time = (datetime.utcnow() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S')
+        utc_time = datetime.utcnow().isoformat().split('.')[0] + 'Z'
 
         # GitHub URLs
         github_file_url = 'https://github.com/honorme/django-testing/blob/master/hng_test_one/views.py'

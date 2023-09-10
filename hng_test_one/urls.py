@@ -20,5 +20,5 @@ from hng_test_one.views import get_info
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('get_info/', get_info, name='get_info'),
+    path('api', get_info, name='get_info'),
 ]
