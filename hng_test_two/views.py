@@ -37,19 +37,19 @@ def person_detail(request, id):
     try:
         person = Person.objects.get(pk=id)
     except Person.DoesNotExist:
-        return JsonResponse({'message': 'The person does not exist'}, status=status.HTTP_404_NOT_FOUND)
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
         serializer = PersonSerializer(person)
-        return JsonResponse(serializer.data)
+        return Response(serializer.data)
 
     elif request.method == 'PUT':
         serializer = PersonSerializer(person, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data)
-        return JsonResponse(serializer.errors, status=400)
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
 
     elif request.method == 'DELETE':
         person.delete()
-        return JsonResponse({'message': 'The person was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_204_NO_CONTENT)
