@@ -1,5 +1,5 @@
 """
-URL configuration for hng_test_one project.
+URL configuration for hng_test_two project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hng_test_one.views import get_info
+from hng_test_two import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api', get_info, name='get_info'),
+    path('api/', views.person_list),
+    path('api/<int:id>', views.person_detail),
 ]
