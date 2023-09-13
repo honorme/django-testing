@@ -69,8 +69,9 @@ Then append `/api` to test the api
 To test the server live, use `https://django-testing-production.up.railway.app`
 
 The postman script is located in the root of the Django testing folder `DjangoTesting.postman_collection.json` at this repo:
-`https://github.com/honorme/django-testing/DjangoTesting.postman_collection.json`
+`https://github.com/honorme/django-testing/blob/master/DjangoTesting.postman_collection.json`
 
 ## UML Diagram
 
-The UML Diagram is in the root directory of the Django Testing folder in this repo: `https://github.com/honorme/django-testing/UML-Diagram.png`
+The UML Diagram is in the root directory of the Django Testing folder in this repo:
+`https://github.com/honorme/django-testing/blob/master/UML-Diagram.png`
